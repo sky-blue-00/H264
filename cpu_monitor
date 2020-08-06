@@ -1,0 +1,8 @@
+#!/bin/sh
+cpu=$(df -h |sed -n '/\/$/p'|awk '{print $5}'|sed 's/%//g')
+echo $cpu
+if [ $cpu -lt 90 ]
+then
+	shutdown -h now
+fi
+

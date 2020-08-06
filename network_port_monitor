@@ -1,0 +1,5 @@
+#!/bin/sh
+tx_pre=$(ifconfig eth1 |sed -n '5p'|awk '{print $5}')
+echo $tx_pre
+rx_pre=$(ifconfig eth1 |sed -n '6p'|awk '{print $5}')
+echo $rx_pre
